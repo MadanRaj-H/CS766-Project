@@ -55,11 +55,13 @@ The model we are using currently is a Convolution neural net with the architectu
 
 ### References
 <p>
-<ol>https://www.sciencedirect.com/topics/computer-science/gesture-recognition</ol>
-<ol>https://www.kaggle.com/grassknoted/asl-alphabet</ol>
-<ol>https://medium.com/@ksusorokina/image-classification-with-convolutional-neural-networks-496815db12a8</ol>
-<ol>https://www.ripublication.com/ijaer18/ijaerv13n9_90.pdf</ol>
-<ol>http://cs231n.stanford.edu/reports/2016/pdfs/214_Report.pdf</ol>
+<ol>
+<li>https://www.sciencedirect.com/topics/computer-science/gesture-recognition</li>
+<li>https://www.kaggle.com/grassknoted/asl-alphabet</li>
+<li>https://medium.com/@ksusorokina/image-classification-with-convolutional-neural-networks-496815db12a8</li>
+<li>https://www.ripublication.com/ijaer18/ijaerv13n9_90.pdf</li>
+<li>http://cs231n.stanford.edu/reports/2016/pdfs/214_Report.pdf</li>
+</ol>
 </p>
 
 
