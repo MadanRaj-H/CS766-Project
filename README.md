@@ -1,11 +1,11 @@
 ## Table of Content
 1. [Introduction](#introduction)
 2. [Framework](#framework)
-3. [Hand Segmentation](#hand-Segmentation)
-4. [CNN Model](#cNN-Model)
+3. [Hand Segmentation](#hand-segmentation)
+4. [CNN Model](#cnn-model)
 5. [Results](#results)
 6. [Conclusion and future work](#conclusion-and-future-work)
-7. [References](#reference)
+7. [References](#references)
 
 ### Introduction
 <p>
@@ -55,6 +55,11 @@ The model we are using currently is a Convolution neural net with the architectu
 
 ### References
 <p>
+<ol>https://www.sciencedirect.com/topics/computer-science/gesture-recognition</ol>
+<ol>https://www.kaggle.com/grassknoted/asl-alphabet</ol>
+<ol>https://medium.com/@ksusorokina/image-classification-with-convolutional-neural-networks-496815db12a8</ol>
+<ol>https://www.ripublication.com/ijaer18/ijaerv13n9_90.pdf</ol>
+<ol>http://cs231n.stanford.edu/reports/2016/pdfs/214_Report.pdf</ol>
 </p>
 
 
