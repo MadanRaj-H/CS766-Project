@@ -41,6 +41,9 @@ The steps involved in detecting the hand in our framework is discussed below.
 ### CNN Model
 <p>
 The model we are using currently is a Convolution neural net with the architecture as shown below:
+<p align="center">
+  <img src="images/image3.png" width="200" height="320" />
+</p>
 </p>
 
 
