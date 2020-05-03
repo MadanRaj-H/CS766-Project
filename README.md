@@ -108,8 +108,8 @@ We have integrated our prototype with VLC Media Player which stimulates a key pr
 </p>
 
 <p>
-Our framework dynamically detects the hand when it is moved anywhere in the frame. It could able to detect and classify gestures even in low light conditions.
-<iframe width="1440" height="509" src="https://www.youtube.com/embed/pL4nyw4-g2k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Our framework dynamically detects the hand when it is moved anywhere in the frame. It could detect and classify gestures even in low light conditions.
+<iframe width="800" height="500" src="https://www.youtube.com/embed/pL4nyw4-g2k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 ### Conclusion and future work
