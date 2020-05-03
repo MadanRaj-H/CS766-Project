@@ -170,10 +170,13 @@ We have integrated our prototype with VLC Media Player which stimulates a key pr
   <img src="images/objectinroi.jpg"/>
 </p>
 </li>
-<li> Our framework will not work in low light or dark conditions. The entire frame is so dark, our framework couldnt detect the skin tone region in order to detect the hand.
+<li> Our framework will not work in low light or dark conditions. The entire frame is so dark, our framework could not detect the skin tone region in order to detect the hand.
 <p align="center">
   <img src="images/dark.jpg"/>
 </p>
+</li>
+<li>
+Our framework is not trained to recognize gestures for letters ’J’, ’Q’ and ’Z’ which requires spatio-temporal details for gesture classiﬁcation. Our system deals with only static image classiﬁcation.
 </li>
 </ol>
 </div>
