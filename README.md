@@ -135,6 +135,18 @@ Our system dynamically able to detect the hand and classify gestures. There are 
 </ol>
 <iframe width="800" height="500" src="https://www.youtube.com/embed/SxZi8f-rl9Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
+<p align="center">
+  <img src="images/a_image.jpg"/>
+</p>
+<p align="center">
+  <img src="images/b_image.jpg"/>
+</p>
+<p align="center">
+  <img src="images/g_image.jpg"/>
+</p>
+<p align="center">
+  <img src="images/r_image.jpg"/>
+</p>
 </div>
 <div>
 <p>
