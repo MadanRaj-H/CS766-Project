@@ -55,6 +55,15 @@ In this approach also, the RGB image frame is converted to YCbCr color space. Us
 <p>
 We know that for a given set of points, the convex hull algorithm gives the smallest convex polygon that contains all the points within it. Therefore, we can use this algorithm to identify the smallest convex polygon that surrounds the hand region thereby isolating the hand from the rest of the frame.
 </p>
+<figure>
+  <p align="center">
+  <img src="images/System1.jpg" width="200" height="320">
+  <fgcaption>Image captured from System</figcaption>
+</p>P
+</figure>
+<p align="center">
+  <img src="equations/stack.png" width="200" height="320" />
+</p>
 
 ### CNN Model
 <p>
