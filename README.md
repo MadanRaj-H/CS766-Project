@@ -1,14 +1,15 @@
 ## Table of Content
 1. [Introduction](#introduction)
-2. [Framework](#framework)
-3. [Hand Segmentation](#hand-segmentation)
+2. [Related Work](#related-work)
+3. [Framework](#framework)
+4. [Hand Segmentation](#hand-segmentation)
 	1. [Static](#static)
 	2. [Dynamic](#dynamic)
-4. [CNN Model](#cnn-model)
-5. [Results](#results)
-6. [Challenges](#challenges)
-7. [Conclusion and future work](#conclusion-and-future-work)
-8. [References](#references)
+5. [CNN Model](#cnn-model)
+6. [Results](#results)
+7. [Challenges](#challenges)
+8. [Conclusion and future work](#conclusion-and-future-work)
+9. [References](#references)
 
 ### Introduction
 <p>
@@ -23,7 +24,7 @@ A configurable framework for gesture recognition can let application developers 
 Many image processing based approaches involve conventional image filters to extract spacio-temporal features and build Hidden Markov Models for hand gesture recognition by considering it as a motion detection problem. In [TODO: add reference link], the system obtains shape and optical flow based features to build a HMM to recognize twelve different type of gestures. In traditional Machine Learning based approaches which use techniques like Support Vector Machines, Artificial Neural Networks, Fuzzy c-means clustering, etc. feature engineering plays a crucial role in prediction accuracy. The gesture recognition system in [TODO: add reference link], eliminates hand segmentation by clipping the hand region manually. It used hand images with uniform light background for the Fuzzy c-means clustering. In [TODO: add reference link], Bheda and Radpour built a CNN based gesture recognition system which resulted a 82.5% validation accuracy.
 </p>
 
-### Our Framework
+### Framework
 <p>
 Our goal of the project is to build a prototype for the described gesture recognition framework. The raw input feed from the camera is split into frames. For every few frames where the change in the scene is minimal, one among them is taken as a reference for the gesture. The position of hand which is the region of interest in the frame is then extracted and pre-processed. It is then passed on to the CNN model to predict the observed gesture.
 </p>
@@ -164,10 +165,16 @@ We have integrated our prototype with VLC Media Player which stimulates a key pr
 
 <div>
 <ol>
-<li> As mentioned in our static implementation we crop out the hand segment from the ROI. We had a limitation in which there shouldn't be any object kept in the ROI region other than hand. If a large object is present then it is very hard to detect the hand by selecting the largest contour. </li>
+<li> As mentioned in our static implementation we crop out the hand segment from the ROI. We had a limitation in which there shouldn't be any object kept in the ROI region other than hand. If a large object is present then it is very hard to detect the hand by selecting the largest contour.
 <p align="center">
   <img src="images/objectinroi.jpg"/>
 </p>
+</li>
+<li> Our framework will not work in low light or dark conditions. The entire frame is so dark, our framework couldnt detect the skin tone region in order to detect the hand.
+<p align="center">
+  <img src="images/dark.jpg"/>
+</p>
+</li>
 </ol>
 </div>
 
