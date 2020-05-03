@@ -95,12 +95,33 @@ We know that for a given set of points, the convex hull algorithm gives the smal
 </figure>
 
 ### CNN Model
+### Introduction
+<p>
+Deep learning is an artificial intelligence function that imitates the workings of the human brain in processing data and creating patterns for use in decision making. Deep learning is a subset of machine learning in artificial intelligence (AI) that has networks capable of learning unsupervised from data that is unstructured or unlabeled. The convolutional neural network (CNN) is a class of deep learning neural networks. CNNs represent a huge breakthrough in image recognition. They’re most commonly used to analyze visual imagery and are frequently working behind the scenes in image classification. The main reason behind this is because in CNN is feature engineering not required. Before CNN, people spent a lot of time on feature selection(algorithm for features extraction). When compared with these handcrafted features with CNN, CNN as well or even better in terms of accuracy. That is because it learns different features from images.
+</p>
+### Static
 <p>
 The model we are using currently is a Convolution neural net with the architecture as shown below:
 <p align="center">
   <img src="images/image3.png"/>
 </p>
+<b> Data</b>:
+The training data set contains 87,000 images which are 200x200 pixels. There are 29 classes, of which 26 are for the letters A-Z and 3 classes for Space, Delete and nothing. These 3 classes are very helpful in real-time applications and classification. The test data set contains a mere 29 images, to encourage the use of real-world test images. 
+
+The train and test data mainly consists of real-world images like ones shown above.
+Following is the schema of the CNN model that is used to train:
+<p align="center">
+  <img src="images/cnn_schema.png"/>
 </p>
+The model is trained for 5 epochs. Using GPU the training time is roughly around 180-200s for each of the epoch. The final training accuracy of the model is 0.9647 and the final validation accuracy is 0.8948. Testing using real world images only leads to an accuracy of 41.15%. One of the main problem was that the images weren't preprocessed. Once it was preprocessed the accuracy was (TODO).
+</p>
+
+### Dynamic
+<p>
+TODO:insert reference
+
+</p>
+
 
 ### Results
 
