@@ -107,6 +107,12 @@ The model we are using currently is a Convolution neural net with the architectu
 We have integrated our prototype with VLC Media Player which stimulates a key press upon predicting a gesture which in turn triggers a corresponding action.
 </p>
 
+<p>
+Our framework dynamically detects the hand when it is moved anywhere in the frame. It could able to detect and classify gestures even in low light conditions.
+<iframe src="https://youtu.be/pL4nyw4-g2k">
+</iframe>
+</p>
+
 ### Conclusion and future work
 <p>
 We were successful on building a framework for gesture recognition that works on raw RGB images without using any special equipment.  
