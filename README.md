@@ -106,12 +106,14 @@ The model we are using currently is a Convolution neural net with the architectu
 
 <p>
 Our system dynamically able to detect the hand and classify gestures. There are three scenarios that has been processed in the video. 
-1. Gesture classified correctly and feedback YES is given to the model to update the prediction score. 
-2. Gesture classified is in the probables list and feedback IN PROBABLES has been sent to the model. Later when the same gesture is given, our system is able to classfiy the gesture in the expected way.
-3. For some letters our gestures are classfied incorrectly and feedback NO is delivered which indicates our model requires extensive training to classify the gesture. 
+<ol>
+<li>Gesture classified correctly and feedback YES is given to the model to update the prediction score.</li> 
+<li>Gesture classified is in the probables list and feedback IN PROBABLES has been sent to the model. Later when the same gesture is given, our system is able to classfiy the gesture in the expected way.</li> 
+<li>For some letters our gestures are classfied incorrectly and feedback NO is delivered which indicates our model requires extensive training to classify the gesture.</li>  
+</ol>
 <iframe width="800" height="500" src="https://www.youtube.com/embed/SxZi8f-rl9Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
+<br>
 <p>
 Our framework dynamically detects the hand when it is moved anywhere in the frame. It could detect and classify gestures even in low light conditions.
 <iframe width="800" height="500" src="https://www.youtube.com/embed/pL4nyw4-g2k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
