@@ -56,40 +56,28 @@ In this approach also, the RGB image frame is converted to YCbCr color space. Us
 We know that for a given set of points, the convex hull algorithm gives the smallest convex polygon that contains all the points within it. Therefore, we can use this algorithm to identify the smallest convex polygon that surrounds the hand region thereby isolating the hand from the rest of the frame.
 </p>
 <figure>
-  <p align="center">
   	<img src="images/System1.jpg">
-  	<fgcaption>Input image frame captured from System</figcaption>
-  </p>
+  	<figcaption>Input image frame captured from System</figcaption>
 </figure>
 <figure>
-  <p align="center">
   	<img src="images/System3.jpg">
-  	<fgcaption>Masking for Skin detection</figcaption>
-  </p>
+  	<figcaption>Masked image for Skin detection</figcaption>
 </figure>
 <figure>
-  <p align="center">
   	<img src="images/System2.jpg">
-  	<fgcaption>Filtering only skin tone</figcaption>
-  </p>
+  	<figcaption>Filter image for skin tone</figcaption>
 </figure>
 <figure>
-  <p align="center">
   	<img src="images/System4.jpg">
-  	<fgcaption>Cropped hand segment region</figcaption>
-  </p>
+  	<figcaption>Cropped hand segment region</figcaption>
 </figure>
 <figure>
-  <p align="center">
   	<img src="images/System5.jpg">
-  	<fgcaption>Hand region extracted from masking</figcaption>
-  </p>
+  	<figcaption>Hand region extracted from masking</figcaption>
 </figure>
 <figure>
-  <p align="center">
   	<img src="images/System6.jpg">
-  	<fgcaption>Convex hull applied to hand region</figcaption>
-  </p>
+  	<figcaption>Convex hull applied to hand region</figcaption>
 </figure>
 
 ### CNN Model
