@@ -29,12 +29,12 @@ Our goal of the project is to build a prototype for the described gesture recogn
 Convolutional Neural Network is a deep learning technique whereby several convolutions and pooling layers are stacked to perform operations like transformation, feature extraction, and decision making. It is the state of the art algorithm for object recognition. The American Sign Language has 26 different gestures which are the symbols for each English alphabet. A dataset [TODO: add reference link] consisting of images depicting gestures for each of these 26 types could be used to build a CNN model that classifies a given gesture into one among these. This model serves as the backbone of our framework.
 </p>
 
-#### Hand Segmentation
+### Hand Segmentation
 <p>
 Hand segmentation can be done using several approaches like motion-based, skin-based or with object detection techniques. Each technique has its advantages in terms of complexity and accuracy. Most systems use glove based methods for easier feature extraction leading to better accuracy. Very few approaches have been proposed in terms of RGB for hand detection.
 </p>
 
-##### Static
+### Static
 <p>
 As you can see, there are a lot of challenges in detecting the hand from the input frame. Hence, we first experimented with the idea of neglecting the background by fixing a rectangular boundary for the region of interest (ROI) and expect the hand to be present within the boundary. Now, the focus in this approach is to effectively pre-process the ROI to extract features in a format that could be input to the model. 
 </p>
@@ -48,7 +48,7 @@ The steps involved are discussed below.
 <li>Threshold the image to get the foreground. The maximum contour area gives the segmented hand which could be sent to the model for gesture prediction.</li>
 </p>
 
-##### Dynamic
+### Dynamic
 <p>
 In this approach also, the RGB image frame is converted to YCbCr color space. Using facial landmark detection, colour of the skin pixels are dynamically determined. All the skin coloured pixels are figured out by thresholding the color value with acceptable offsets and then filtering it out. We then binarize the resultant image and apply the same set of morphological operations as described in the previous method. Now we have a processed image denoting the contour of all the skin coloured pixels in the frame.
 </p>
@@ -56,7 +56,7 @@ In this approach also, the RGB image frame is converted to YCbCr color space. Us
 We know that for a given set of points, the convex hull algorithm gives the smallest convex polygon that contains all the points within it. Therefore, we can use this algorithm to identify the smallest convex polygon that surrounds the hand region thereby isolating the hand from the rest of the frame.
 </p>
 
-#### CNN Model
+### CNN Model
 <p>
 The model we are using currently is a Convolution neural net with the architecture as shown below:
 <p align="center">
