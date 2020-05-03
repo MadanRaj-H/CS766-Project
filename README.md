@@ -176,6 +176,9 @@ We have integrated our prototype with VLC Media Player which stimulates a key pr
 </p>
 </li>
 <li>
+In today's vision systems, every process is initialized with start and stop actions like voice-controlled, head movement mechanisms. To make it simpler in our framework, we aggregated 20 frames, weighted its average and classified the gesture. 
+</li>
+<li>
 Our framework is not trained to recognize gestures for letters ’J’, ’Q’ and ’Z’ which requires spatio-temporal details for gesture classiﬁcation. Our system deals with only static image classiﬁcation.
 </li>
 </ol>
@@ -184,9 +187,11 @@ Our framework is not trained to recognize gestures for letters ’J’, ’Q’ 
 ### Conclusion and future work
 <p>
 We were successful on building a framework for gesture recognition that works on raw RGB images without using any special equipment.  
-Gestures that require spatio-temporal features for classification could not be determined with just 2D image frames. Current advancements in Computer Vision which uses depth sensors to extract depth information of an image might help us in recognizing such gestures.   
-Also for cases where the background color is close to the skin color of ROI, the hand segmentation is not so effective. Techniques to overcome this problem would significantly broaden the application of our system.   
-Memory based learning algorithms like RNN, LSTM could be used to extend the range of supportable gestures by also considering those which involve object movement between frames into account.
+<ol>
+<li>Gestures that require spatio-temporal features for classification could not be determined with just 2D image frames. Current advancements in Computer Vision which uses depth sensors to extract depth information of an image might help us in recognizing such gestures.   </li>
+<li> For cases where the background color is close to the skin color of ROI, the hand segmentation is not so effective. Techniques to overcome this problem would significantly broaden the application of our system.   </li>
+<li>Memory based learning algorithms like RNN, LSTM could be used to extend the range of supportable gestures by also considering those which involve object movement between frames into account.</li>
+</ol>
 </p>
 
 ### References
