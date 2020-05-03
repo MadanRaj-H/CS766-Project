@@ -48,6 +48,13 @@ The steps involved are discussed below.
 <li>Threshold the image to get the foreground. The maximum contour area gives the segmented hand which could be sent to the model for gesture prediction.</li>
 </p>
 
+##### Dynamic
+<p>
+In this approach also, the RGB image frame is converted to YCbCr color space. Using facial landmark detection, colour of the skin pixels are dynamically determined. All the skin coloured pixels are figured out by thresholding the color value with acceptable offsets and then filtering it out. We then binarize the resultant image and apply the same set of morphological operations as described in the previous method. Now we have a processed image denoting the contour of all the skin coloured pixels in the frame.
+</p>
+<p>
+We know that for a given set of points, the convex hull algorithm gives the smallest convex polygon that contains all the points within it. Therefore, we can use this algorithm to identify the smallest convex polygon that surrounds the hand region thereby isolating the hand from the rest of the frame.
+</p>
 
 #### CNN Model
 <p>
@@ -59,12 +66,16 @@ The model we are using currently is a Convolution neural net with the architectu
 
 ### Results
 <p>
+We have integrated our prototype with VLC Media Player which stimulates a key press upon predicting a gesture which in turn triggers a corresponding action.
 </p>
 
 ### Conclusion and future work
 <p>
+We were successful on building a framework for gesture recognition that works on raw RGB images without using any special equipment.  
+Gestures that require spatio-temporal features for classification could not be determined with just 2D image frames. Current advancements in Computer Vision which uses depth sensors to extract depth information of an image might help us in recognizing such gestures.   
+Also for cases where the background color is close to the skin color of ROI, the hand segmentation is not so effective. Techniques to overcome this problem would significantly broaden the application of our system.   
+Memory based learning algorithms like RNN, LSTM could be used to extend the range of supportable gestures by also considering those which involve object movement between frames into account.
 </p>
-
 
 ### References
 <p>
