@@ -104,6 +104,7 @@ The model we are using currently is a Convolution neural net with the architectu
 
 ### Results
 
+<div>
 <p>
 Our system dynamically able to detect the hand and classify gestures. There are three scenarios that has been processed in the video. 
 <ol>
@@ -113,12 +114,13 @@ Our system dynamically able to detect the hand and classify gestures. There are 
 </ol>
 <iframe width="800" height="500" src="https://www.youtube.com/embed/SxZi8f-rl9Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-<br>
+</div>
+<div>
 <p>
 Our framework dynamically detects the hand when it is moved anywhere in the frame. It could detect and classify gestures even in low light conditions.
 <iframe width="800" height="500" src="https://www.youtube.com/embed/pL4nyw4-g2k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
+</div>
 <p>
 We have integrated our prototype with VLC Media Player which stimulates a key press upon predicting a gesture which in turn triggers a corresponding action.
 </p>
