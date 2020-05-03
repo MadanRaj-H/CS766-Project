@@ -6,8 +6,9 @@
 	2. [Dynamic](#dynamic)
 4. [CNN Model](#cnn-model)
 5. [Results](#results)
-6. [Conclusion and future work](#conclusion-and-future-work)
-7. [References](#references)
+6. [Challenges](#challenges)
+7. [Conclusion and future work](#conclusion-and-future-work)
+8. [References](#references)
 
 ### Introduction
 <p>
@@ -158,6 +159,17 @@ Our framework dynamically detects the hand when it is moved anywhere in the fram
 <p>
 We have integrated our prototype with VLC Media Player which stimulates a key press upon predicting a gesture which in turn triggers a corresponding action.
 </p>
+
+### Challenges
+
+<div>
+<ol>
+<li> As mentioned in our static implementation we crop out the hand segment from the ROI. We had a limitation in which there shouldn't be any object kept in the ROI region other than hand. If a large object is present then it is very hard to detect the hand by selecting the largest contour. </li>
+<p align="center">
+  <img src="images/objectinroi.jpg"/>
+</p>
+</ol>
+</div>
 
 ### Conclusion and future work
 <p>
