@@ -57,27 +57,27 @@ We know that for a given set of points, the convex hull algorithm gives the smal
 </p>
 <figure>
   	<img src="images/System1.jpg">
-  	<figcaption>Input image frame captured from System</figcaption>
+  	<figcaption align="center">Fig1. Input image frame captured from System</figcaption>
 </figure>
 <figure>
   	<img src="images/System3.jpg">
-  	<figcaption>Masked image for Skin detection</figcaption>
+  	<figcaption align="center">Fig2. Masked image for Skin detection</figcaption>
 </figure>
 <figure>
   	<img src="images/System2.jpg">
-  	<figcaption>Filter image for skin tone</figcaption>
+  	<figcaption align="center">Fig3. Filter image for skin tone</figcaption>
 </figure>
 <figure>
   	<img src="images/System4.jpg">
-  	<figcaption>Cropped hand segment region</figcaption>
+  	<figcaption align="center">Fig4. Cropped hand segment region</figcaption>
 </figure>
 <figure>
   	<img src="images/System5.jpg">
-  	<figcaption>Hand region extracted from masking</figcaption>
+  	<figcaption align="center">Fig5. Hand region extracted from masking</figcaption>
 </figure>
 <figure>
   	<img src="images/System6.jpg">
-  	<figcaption>Convex hull applied to hand region</figcaption>
+  	<figcaption align="center">Fig6. Convex hull applied to hand region</figcaption>
 </figure>
 
 ### CNN Model
