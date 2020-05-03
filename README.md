@@ -2,6 +2,8 @@
 1. [Introduction](#introduction)
 2. [Framework](#framework)
 3. [Hand Segmentation](#hand-segmentation)
+	1. [Static](#static)
+	2. [Dynamic](#dynamic)
 4. [CNN Model](#cnn-model)
 5. [Results](#results)
 6. [Conclusion and future work](#conclusion-and-future-work)
@@ -47,6 +49,18 @@ The steps involved are discussed below.
 <li>Once the background is fixed, perform morphological transformations like dilation, erosion and median filter to sieve the background noise and preserve structural integrity.</li>
 <li>Threshold the image to get the foreground. The maximum contour area gives the segmented hand which could be sent to the model for gesture prediction.</li>
 </p>
+<figure>
+  	<img src="images/BB1.jpg">
+  	<figcaption align="center">Fig1. Input image captured and green rect refers to the region where background is fixed</figcaption>
+</figure>
+<figure>
+  	<img src="images/Gestures_BoundingRect.jpg">
+  	<figcaption align="center">Fig2. Raw image where gestures captured in ROI</figcaption>
+</figure>
+<figure>
+  	<img src="images/Gestures.jpg">
+  	<figcaption align="center">Fig3. Threshold image for various gestures</figcaption>
+</figure>
 
 ### Dynamic
 <p>
