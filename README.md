@@ -103,27 +103,31 @@ Deep learning is an artificial intelligence function that imitates the workings 
 </p>
 ### Static
 <p>
-The model we are using currently is a Convolution neural net with the architecture as shown below:
+The model we are using currently is built from scratch and we have integrated this model with the static processing of images to improve the accuracy of the model. When the image is preprocessed the background is removed which leads to better training of the model. The CNN used has the following architecture:
 <p align="center">
   <img src="images/image3.png"/>
 </p>
-<b> Data</b>:
-The training data set contains 87,000 images which are 200x200 pixels. There are 29 classes, of which 26 are for the letters A-Z and 3 classes for Space, Delete and nothing. These 3 classes are very helpful in real-time applications and classification. The test data set contains a mere 29 images, to encourage the use of real-world test images. 
 
-The train and test data mainly consists of real-world images like ones shown above.
-Following is the schema of the CNN model that is used to train:
+The training data set contains 87,000 images which are 200x200 pixels. There are 29 classes, of which 26 are for the letters A-Z and 3 classes for Space, Delete and nothing. These 3 classes are very helpful in real-time applications and classification. The test data set contains a mere 29 images. We took more images personally to add to this dataset.
+The train and test data mainly consists of real-world images. Following is the schema of the CNN model that is used to train:
 <p align="center">
   <img src="images/cnn_schema.png"/>
 </p>
-The model is trained for 5 epochs. Using GPU the training time is roughly around 180-200s for each of the epoch. The final training accuracy of the model is 0.9647 and the final validation accuracy is 0.8948. Testing using real world images only leads to an accuracy of 41.15%. One of the main problem was that the images weren't preprocessed. Once it was preprocessed the accuracy was (TODO).
+The model is trained for 5 epochs. Using GPU the training time is roughly around 180-200s for each of the epoch. The final training accuracy of the model is 0.9647 and the final validation accuracy is 0.8948. Testing using real world images only leads to an accuracy of 41.15%. One of the main problem that we faced earlier was that the images weren't preprocessed. Once it was preprocessed the accuracy was 51.23%.
 </p>
 
-### Dynamic
 <p>
-TODO:insert reference
 
+In case of static we built the model from scratch, trained the model with a dataset and then used that model to predict the sign in the images. But the downside to this approach was the training time. It took around 20 mins for 5 epochs with a GPU. It is hard to find resources like GPU as well and we needed to retrain after every minor change in the code.This is where transfer learning came into picture. Transfer Learning is a method of transferring the hyperparameters of pretrained networks which are trained for weeks on multiple GPUs and has the ability to classify the input data over 1000 classes. This mitigates the tedious job of building CNN from scratch and training them. We also wanted to integrate another model to check if our platform gives the flexibility of plugging in different models.In this part we have used MobileNet CNN Model for transfer learning which is trained with 1.2 million images with 1000 classes. MobileNet is a deep-convolutional neural network developed by Google targeting the mobile and embedded vision application. Another technique popular in machine learning is ensemble learning. Ensemble Learning is a process using which multiple machine learning models (such as classifiers) are strategically constructed to solve a particular problem. This technique reduces the chance of model overfitting during training and mitigates the occurrence of bias and variance conditions. We implemented the model mentioned in the paper (TODO: insert reference). Here we are combining four Mobilenets that are trained at 5000, 10000, 15000 and 20000 learning iterations with a learning rate of 0.001. There is a scoring function present that ensembles the independently trained MobileNets by aggregating their individual confidence scores. The aggregation is done using bagging technique to obtain final prediction confidence. This model was then written into a .pb file to essentially freeze the model. Following is the visualization of the model that was built(created using tensorboard).
+<p align="center">
+  <img src="images/Tensorboard_graph_1.png"/>
+</p>
+<p align="center">
+  <img src="images/Tensorboard_graph_2.png"/>
 </p>
 
+Since we were able to integrate this model in our framework we were able to test its flexibility. 
+</p>
 
 ### Results
 
