@@ -20,9 +20,7 @@ A configurable framework for gesture recognition can let application developers 
 </p>
 
 ### Related Work
-<p>
 Many image processing based approaches involve conventional image filters to extract spacio-temporal features and build Hidden Markov Models for hand gesture recognition by considering it as a motion detection problem. In [[6](#references)], the system obtains shape and optical flow based features to build a HMM to recognize twelve different type of gestures. In traditional Machine Learning based approaches which use techniques like Support Vector Machines, Artificial Neural Networks, Fuzzy c-means clustering, etc. feature engineering plays a crucial role in prediction accuracy. The gesture recognition system in [[7](#references)], eliminates hand segmentation by clipping the hand region manually. It used hand images with uniform light background for the Fuzzy c-means clustering. In [[8](#references)], Bheda and Radpour built a CNN based gesture recognition system which resulted a 82.5% validation accuracy.
-</p>
 
 ### Framework
 <p>
