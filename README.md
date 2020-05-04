@@ -26,7 +26,11 @@ Many image processing based approaches involve conventional image filters to ext
 
 ### Framework
 <p>
-Our goal of the project is to build a prototype for the described gesture recognition framework. The raw input feed from the camera is split into frames. For every few frames where the change in the scene is minimal, one among them is taken as a reference for the gesture. The position of hand which is the region of interest in the frame is then extracted and pre-processed. It is then passed on to the CNN model to predict the observed gesture.
+Our goal of the project is to build a prototype for the described gesture recognition framework. The raw input feed from the camera is split into frames. For every few frames where the change in the scene is minimal, one among them is taken as a reference for the gesture. The position of hand which is the region of interest in the frame is then extracted and pre-processed. It is then passed on to the CNN model to predict the observed gesture. We are testing out our framework with gestures from Amercan Sign Language(ASL). Following are the alphabets in ASL. In the below sections we have tried to mimic these gestures.
+<figure>
+    <img src="images/ASL.jpeg">
+    <figcaption align="center">ASL alphabets</figcaption>
+</figure>
 </p>
 
 <p>
@@ -109,9 +113,9 @@ The model we are using currently is built from scratch and we have integrated th
 </p>
 
 The training data set contains 87,000 images which are 200x200 pixels. There are 29 classes, of which 26 are for the letters A-Z and 3 classes for Space, Delete and nothing. These 3 classes are very helpful in real-time applications and classification. The test data set contains a mere 29 images. We took more images personally to add to this dataset.
-The train and test data mainly consists of real-world images. Following is the schema of the CNN model that is used to train:
+The train and test data mainly consists of real-world images like the following :
 <p align="center">
-  <img src="images/cnn_schema.png"/>
+  <img src="images/D_test.jpg"/>
 </p>
 The model is trained for 5 epochs. Using GPU the training time is roughly around 180-200s for each of the epoch. The final training accuracy of the model is 0.9647 and the final validation accuracy is 0.8948. Testing using real world images only leads to an accuracy of 41.15%. One of the main problem that we faced earlier was that the images weren't preprocessed. Once it was preprocessed the accuracy was 51.23%.
 </p>
@@ -126,7 +130,7 @@ In case of static we built the model from scratch, trained the model with a data
   <img src="images/Tensorboard_graph_2.png"/>
 </p>
 
-Since we were able to integrate this model in our framework we were able to test its flexibility. 
+Since we were able to integrate this model in our framework we were able to test out its flexibility. 
 </p>
 
 ### Results
