@@ -31,9 +31,7 @@ Our goal of the project is to build a prototype for the described gesture recogn
 </figure>
 </p>
 
-<p>
 Convolutional Neural Network is a deep learning technique whereby several convolutions and pooling layers are stacked to perform operations like transformation, feature extraction, and decision making. It is the state of the art algorithm for object recognition. The American Sign Language has 26 different gestures which are the symbols for each English alphabet. A dataset [[2](#references)] consisting of images depicting gestures for each of these 26 types could be used to build a CNN model that classifies a given gesture into one among these. This model serves as the backbone of our framework.
-</p>
 
 ### Hand Segmentation
 <p>
