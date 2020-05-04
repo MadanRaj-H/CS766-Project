@@ -1,4 +1,5 @@
 theme: jekyll-theme-cayman
 title: Hand Gesture Recognition Framework
 description: Madan Raj Hari       Niveditha Hariharan         Muthunagappan Muthuraman
-url: https://github.com/muthu95/gesture-recognition
+github:
+  repository_url: https://github.com/muthu95/gesture-recognition
