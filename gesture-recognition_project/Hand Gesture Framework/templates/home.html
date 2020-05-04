@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hand Gesture Recognition Framework</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type=text/javascript>
+    $(document).ready(function() {
+
+
+       $("#yes").click(function() {
+          $.getJSON('/yes',function(data){
+            console.log(data)
+          });
+       });
+
+      $("#inprobables").click(function() {
+          $.getJSON('/inprobables',function(data){
+            console.log(data)
+          });
+       });
+
+      $("#no").click(function() {
+          $.getJSON('/no',function(data){
+            console.log(data)
+          });
+       });
+      
+      function stream_status(){
+      
+        $.getJSON('/status',function(data){
+          $("#result").text(data.status);
+    		  var status=data.status;
+    		  var prediction=data.predicted_letter;
+          var probables = data.probables;
+    		  console.log(status)
+    		  document.getElementById('status').innerHTML=status
+    		  document.getElementById('prediction').innerHTML=prediction
+          document.getElementById('probables').innerHTML=probables
+        });
+         
+    }
+    stream_status();
+    window.setInterval(stream_status, 1000);
+
+    });
+  </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+    box-sizing: border-box;
+}
+.header {
+	background: #99BDFF;
+	color:white;
+    padding: 5px;
+	text-align: center;
+}
+.video {
+	background:#eee;
+    width: 50%;
+    float: left;
+    padding: 15px;
+}
+.video img{
+	width: 100%;
+    height: auto;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}
+
+#yes {
+  background-color: green; 
+  width: 150px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+#inprobables {
+  background-color: orange; 
+  width: 150px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+#no {
+  background-color: red; 
+  width: 150px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1> Computer Vision CS766 - Project </h1>
+  <h2> Hand Gesture Recognition Framework</h2>
+</div>
+<div>
+  <table>
+  <tr>
+    <th><p class='text1' id="status"></p></th>
+  </tr>
+  </table>
+</div>
+<div>
+<div class="video">
+	<img src="{{ url_for('calc') }}" class="responsive">
+</div>
+<div class='output'>
+  <table>
+  <tr>
+    <th><p class='text2' id="prediction"><b></b></p></th>
+  </tr>
+  <tr>
+    <th><p class='text3' id="probables"><b></b></p></th>
+  </tr>
+  </table>
+ </div>
+  <div>
+  <button id="yes"> YES </button>
+  <button id="inprobables"> IN PROBABLES </button>
+  <button id="no"> NO </button>
+  </div>
+</div>
+
+
+</body>
+</html>
