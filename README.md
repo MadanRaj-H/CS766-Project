@@ -97,13 +97,13 @@ We know that for a given set of points, the convex hull algorithm gives the smal
 </figure>
 
 ### CNN Model
-### Introduction
+
 <p>
-Deep learning is an artificial intelligence function that imitates the workings of the human brain in processing data and creating patterns for use in decision making. Deep learning is a subset of machine learning in artificial intelligence (AI) that has networks capable of learning unsupervised from data that is unstructured or unlabeled. The convolutional neural network (CNN) is a class of deep learning neural networks. CNNs represent a huge breakthrough in image recognition. They’re most commonly used to analyze visual imagery and are frequently working behind the scenes in image classification. The main reason behind this is because in CNN is feature engineering not required. Before CNN, people spent a lot of time on feature selection(algorithm for features extraction). When compared with these handcrafted features with CNN, CNN as well or even better in terms of accuracy. That is because it learns different features from images.
+Deep learning is an artificial intelligence function that imitates the workings of the human brain in processing data and creating patterns for use in decision making. Deep learning is a subset of machine learning in artificial intelligence (AI) that has networks capable of learning unsupervised from data that is unstructured or unlabeled. The convolutional neural network (CNN) is a class of deep learning neural networks. CNNs represent a huge breakthrough in image recognition. They’re most commonly used to analyze visual imagery and are frequently working behind the scenes in image classification. The main reason behind this is because in CNN is feature engineering not required. Before CNN, people spent a lot of time on feature selection(algorithm for features extraction). When compared with these handcrafted features with CNN, CNN performs well or even better in terms of accuracy. That is because it learns different features from images.
 </p>
 ### Static
 <p>
-The model we are using currently is built from scratch and we have integrated this model with the static processing of images to improve the accuracy of the model. When the image is preprocessed the background is removed which leads to better training of the model. The CNN used has the following architecture:
+The first model is built from scratch and we have integrated this model with the static processing of images to improve the accuracy of the model. When the image is preprocessed the background is removed which leads to better training of the model. The CNN used has the following architecture:
 <p align="center">
   <img src="images/image3.png"/>
 </p>
@@ -113,12 +113,15 @@ The train and test data mainly consists of real-world images like the following 
 <p align="center">
   <img src="images/D_test.jpg"/>
 </p>
-The model is trained for 5 epochs. Using GPU the training time is roughly around 180-200s for each of the epoch. The final training accuracy of the model is 0.9647 and the final validation accuracy is 0.8948. Testing using real world images only leads to an accuracy of 41.15%. One of the main problem that we faced earlier was that the images weren't preprocessed. Once it was preprocessed the accuracy was 51.23%.
+The model is trained for 5 epochs. Using GPU the training time is roughly around 180-200s for each of the epoch. The final training accuracy of the model is 0.9647 and the final validation accuracy is 0.8948. Testing using real world images only leads to an accuracy of 41.15%. One of the main problem that we faced earlier was that the images weren't preprocessed. Once it was preprocessed the accuracy improved to 51.23%.
 </p>
 
+### Transfer Learning
 <p>
-
-In case of static we built the model from scratch, trained the model with a dataset and then used that model to predict the sign in the images. But the downside to this approach was the training time. It took around 20 mins for 5 epochs with a GPU. It is hard to find resources like GPU as well and we needed to retrain after every minor change in the code.This is where transfer learning came into picture. Transfer Learning is a method of transferring the hyperparameters of pretrained networks which are trained for weeks on multiple GPUs and has the ability to classify the input data over 1000 classes. This mitigates the tedious job of building CNN from scratch and training them. We also wanted to integrate another model to check if our platform gives the flexibility of plugging in different models.In this part we have used MobileNet CNN Model for transfer learning which is trained with 1.2 million images with 1000 classes. MobileNet is a deep-convolutional neural network developed by Google targeting the mobile and embedded vision application. Another technique popular in machine learning is ensemble learning. Ensemble Learning is a process using which multiple machine learning models (such as classifiers) are strategically constructed to solve a particular problem. This technique reduces the chance of model overfitting during training and mitigates the occurrence of bias and variance conditions. We implemented the model mentioned in the paper (TODO: insert reference). Here we are combining four Mobilenets that are trained at 5000, 10000, 15000 and 20000 learning iterations with a learning rate of 0.001. There is a scoring function present that ensembles the independently trained MobileNets by aggregating their individual confidence scores. The aggregation is done using bagging technique to obtain final prediction confidence. This model was then written into a .pb file to essentially freeze the model. Following is the visualization of the model that was built(created using tensorboard).
+In case of static we built the model from scratch, trained the model with a dataset and then used that model to predict the sign in the images. But the downside to this approach was the training time. It took around 20 mins for 5 epochs with a GPU. It is hard to find resources like GPU as well and we needed to retrain after every minor change in the code. This is where transfer learning came into picture. Transfer Learning is a method of transferring the hyperparameters of pretrained networks which are trained for weeks on multiple GPUs and has the ability to classify the input data over 1000 classes. This mitigates the tedious job of building CNN from scratch and training them. We also wanted to integrate another model to check if our platform gives the flexibility of plugging in different models. In this part we have used MobileNet CNN Model for transfer learning which is trained with 1.2 million images with 1000 classes. MobileNet is a deep-convolutional neural network developed by Google targeting the mobile and embedded vision application. 
+</p>
+<p>
+Another technique popular in machine learning is ensemble learning. Ensemble Learning is a process using which multiple machine learning models (such as classifiers) are strategically constructed to solve a particular problem. This technique reduces the chance of model overfitting during training and mitigates the occurrence of bias and variance conditions. We implemented the model mentioned in the paper (TODO: insert reference). Here we are combining four Mobilenets that are trained at 5000, 10000, 15000 and 20000 learning iterations with a learning rate of 0.001. There is a scoring function present that ensembles the independently trained MobileNets by aggregating their individual confidence scores. The aggregation is done using bagging technique to obtain final prediction confidence. This model was then stored in a .pb file to essentially freeze it. Following is the visualization of the model that was built(created using tensorboard).
 <p align="center">
   <img src="images/Tensorboard_graph_1.png"/>
 </p>
@@ -133,11 +136,11 @@ Since we were able to integrate this model in our framework we were able to test
 
 <div>
 <p>
-Our system dynamically able to detect the hand and classify gestures. There are three scenarios that has been processed in the video. 
+Our system was dynamically able to detect the hand and classify gestures. There are three scenarios that has been processed in the video. 
 <ol>
 <li>Gesture classified correctly and feedback YES is given to the model to update the prediction score.</li> 
-<li>Gesture classified is in the probables list and feedback IN PROBABLES has been sent to the model. Later when the same gesture is given, our system is able to classfiy the gesture in the expected way.</li> 
-<li>For some letters our gestures are classfied incorrectly and feedback NO is delivered which indicates our model requires extensive training to classify the gesture.</li>  
+<li>Gesture classified is in the probables list and feedback IN PROBABLES has been sent to the model. Later when the same gesture is given, our system would be able to classfiy the gesture in the expected way.</li> 
+<li>For some letters our gestures are classfied incorrectly and feedback NO is delivered which indicates that our model still needs to be worked on to improve accuracy.</li>  
 </ol>
 <iframe width="800" height="500" src="https://www.youtube.com/embed/SxZi8f-rl9Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
@@ -161,9 +164,6 @@ Our framework dynamically detects the hand when it is moved anywhere in the fram
 <iframe width="800" height="500" src="https://www.youtube.com/embed/pL4nyw4-g2k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 </div>	
-<p>
-We have integrated our prototype with VLC Media Player which stimulates a key press upon predicting a gesture which in turn triggers a corresponding action.
-</p>
 
 ### Challenges
 
@@ -174,7 +174,7 @@ We have integrated our prototype with VLC Media Player which stimulates a key pr
   <img src="images/objectinroi.jpg"/>
 </p>
 </li>
-<li> Our framework will not work in low light or dark conditions. The entire frame is so dark, our framework could not detect the skin tone region in order to detect the hand.
+<li> Our framework will not work in low light or dark conditions. The entire frame is so dark that our framework could not detect the skin tone region in order to detect the hand.
 <p align="center">
   <img src="images/dark.jpg"/>
 </p>
@@ -183,7 +183,7 @@ We have integrated our prototype with VLC Media Player which stimulates a key pr
 In today's vision systems, every process is initialized with start and stop actions like voice-controlled, head movement mechanisms. To make it simpler in our framework, we aggregated 20 frames, weighted its average and classified the gesture. 
 </li>
 <li>
-Our framework is not trained to recognize gestures for letters ’J’, ’Q’ and ’Z’ which requires spatio-temporal details for gesture classiﬁcation. Our system deals with only static image classiﬁcation.
+Our framework is not trained to recognize gestures for letters ’J’, ’Q’ and ’Z’ which requires temporal details.
 </li>
 </ol>
 </div>
@@ -193,8 +193,8 @@ Our framework is not trained to recognize gestures for letters ’J’, ’Q’ 
 We were successful on building a framework for gesture recognition that works on raw RGB images without using any special equipment.  
 <ol>
 <li>Gestures that require spatio-temporal features for classification could not be determined with just 2D image frames. Current advancements in Computer Vision which uses depth sensors to extract depth information of an image might help us in recognizing such gestures.   </li>
-<li> For cases where the background color is close to the skin color of ROI, the hand segmentation is not so effective. Techniques to overcome this problem would significantly broaden the application of our system.   </li>
 <li>Memory based learning algorithms like RNN, LSTM could be used to extend the range of supportable gestures by also considering those which involve object movement between frames into account.</li>
+<li> For cases where the background color is close to the skin color of ROI, the hand segmentation is not so effective. Techniques to overcome this problem would significantly broaden the application of our system.</li>
 </ol>
 </p>
 
