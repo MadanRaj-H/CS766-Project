@@ -96,6 +96,8 @@ We know that for a given set of points, the convex hull algorithm gives the smal
   	<figcaption align="center">Fig9. Convex hull applied to hand region</figcaption>
 </figure>
 <iframe width="800" height="500" src="https://www.youtube.com/embed/pL4nyw4-g2k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Our framework dynamically detects the hand when it is moved anywhere in the frame. It could detect and classify gestures even in low light conditions.
+
 
 ### CNN Model
 
