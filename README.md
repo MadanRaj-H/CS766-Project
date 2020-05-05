@@ -32,6 +32,10 @@ Our goal of the project is to build a prototype for the described gesture recogn
 </p>
 
 Convolutional Neural Network is a deep learning technique whereby several convolutions and pooling layers are stacked to perform operations like transformation, feature extraction, and decision making. It is the state of the art algorithm for object recognition. The American Sign Language has 26 different gestures which are the symbols for each English alphabet. A dataset [[2](#references)] consisting of images depicting gestures for each of these 26 types could be used to build a CNN model that classifies a given gesture into one among these. This model serves as the backbone of our framework.
+<figure>
+    <img src="images/Sys_design.png">
+    <figcaption align="center">System Design</figcaption>
+</figure>
 
 ### Hand Segmentation
 <p>
@@ -204,6 +208,7 @@ We were successful on building a framework for gesture recognition that works on
 <li>https://medium.com/@ksusorokina/image-classification-with-convolutional-neural-networks-496815db12a8</li>
 <li>https://www.ripublication.com/ijaer18/ijaerv13n9_90.pdf</li>
 <li>http://cs231n.stanford.edu/reports/2016/pdfs/214_Report.pdf</li>
+<li>https://digital.library.unt.edu/ark:/67531/metadc1404616/</li>
 <li>"A gesture based interface for remote robot control" by Ashutosh, A. Singh, S. Banerjee, and S. Chaudhury. https://ieeexplore.ieee.org/document/797102</li>
 <li>"Sign language finger alphabet recognition from gabor-pca representation of hand gestures" by M. A. Amin and H. Yan. https://ieeexplore.ieee.org/document/4370514</li>
 <li>"Using deep convolutional networks for gesture recognition in american sign language" by Vivek Bheda and Dianna Radpour. https://arxiv.org/abs/1710.06836</li>
