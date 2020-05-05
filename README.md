@@ -95,6 +95,9 @@ We know that for a given set of points, the convex hull algorithm gives the smal
   	<img src="images/System6.jpg">
   	<figcaption align="center">Fig6. Convex hull applied to hand region</figcaption>
 </figure>
+<p>
+<iframe width="800" height="500" src="https://www.youtube.com/embed/pL4nyw4-g2k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 ### CNN Model
 
@@ -121,7 +124,7 @@ The model is trained for 5 epochs. Using GPU the training time is roughly around
 In case of static we built the model from scratch, trained the model with a dataset and then used that model to predict the sign in the images. But the downside to this approach was the training time. It took around 20 mins for 5 epochs with a GPU. It is hard to find resources like GPU as well and we needed to retrain after every minor change in the code. This is where transfer learning came into picture. Transfer Learning is a method of transferring the hyperparameters of pretrained networks which are trained for weeks on multiple GPUs and has the ability to classify the input data over 1000 classes. This mitigates the tedious job of building CNN from scratch and training them. We also wanted to integrate another model to check if our platform gives the flexibility of plugging in different models. In this part we have used MobileNet CNN Model for transfer learning which is trained with 1.2 million images with 1000 classes. MobileNet is a deep-convolutional neural network developed by Google targeting the mobile and embedded vision application. 
 </p>
 <p>
-Another technique popular in machine learning is ensemble learning. Ensemble Learning is a process using which multiple machine learning models (such as classifiers) are strategically constructed to solve a particular problem. This technique reduces the chance of model overfitting during training and mitigates the occurrence of bias and variance conditions. We implemented the model mentioned in the paper (TODO: insert reference). Here we are combining four Mobilenets that are trained at 5000, 10000, 15000 and 20000 learning iterations with a learning rate of 0.001. There is a scoring function present that ensembles the independently trained MobileNets by aggregating their individual confidence scores. The aggregation is done using bagging technique to obtain final prediction confidence. This model was then stored in a .pb file to essentially freeze it. Following is the visualization of the model that was built(created using tensorboard).
+Another technique popular in machine learning is ensemble learning. Ensemble Learning is a process using which multiple machine learning models (such as classifiers) are strategically constructed to solve a particular problem. This technique reduces the chance of model overfitting during training and mitigates the occurrence of bias and variance conditions. The model combines four Mobilenets that are trained at 5000, 10000, 15000 and 20000 learning iterations with a learning rate of 0.001. There is a scoring function present that ensembles the independently trained MobileNets by aggregating their individual confidence scores. The aggregation is done using bagging technique to obtain final prediction confidence. This model was then stored in a .pb file to essentially freeze it. Following is the visualization of the model that was built(created using tensorboard).
 <p align="center">
   <img src="images/Tensorboard_graph_1.png"/>
 </p>
@@ -158,11 +161,6 @@ Our system was dynamically able to detect the hand and classify gestures. There 
 </p>
 </div>
 <div>
-<p>
-Our framework dynamically detects the hand when it is moved anywhere in the frame. It could detect and classify gestures even in low light conditions.
-<ol></ol>
-<iframe width="800" height="500" src="https://www.youtube.com/embed/pL4nyw4-g2k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
 </div>	
 
 ### Challenges
